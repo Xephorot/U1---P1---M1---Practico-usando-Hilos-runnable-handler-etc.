@@ -1,43 +1,48 @@
 package com.example.practico1;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.widget.Button;
+import android.widget.LinearLayout;
+
 import com.example.practico1.Ejercicio5.MessageSender;
 
 public class Ejercicio_52 extends AppCompatActivity {
 
-    private TextView messageTextView;
+    private LinearLayout messagesContainer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ejercicio52);
 
-        messageTextView = findViewById(R.id.messageTextView);
+        messagesContainer = findViewById(R.id.messagesContainer2);
 
-        Intent intent = getIntent();
-        if (intent != null) {
-            Bundle bundle = intent.getExtras();
-            if (bundle != null) {
-                String message = bundle.getString("message");
-                if (message != null) {
-                    messageTextView.setText(message);
+        MessageSender.loadMessages(this, messagesContainer);
 
-                    // Simulamos el envío de una respuesta asincrónica con coroutine
-                    MessageSender.sendMessageAsync("Hola desde ejercicio_52", new MessageSender.MessageCallback() {
-                        @Override
-                        public void onMessageSent(final String message) {
-                            runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    messageTextView.append("\nRespuesta: " + message);
-                                }
-                            });
-                        }
-                    });
-                }
-            }
-        }
+        Button sendButton52 = findViewById(R.id.sendButton52);
+        sendButton52.setOnClickListener(view -> {
+            sendMessageFrom52();
+        });
+
+        Button deleteButton = findViewById(R.id.deleteButton);
+        deleteButton.setOnClickListener(view -> {
+            MessageSender.deleteAllMessageViews(this, messagesContainer);
+        });
     }
+
+    private void sendMessageFrom52() {
+        MessageSender.addMessage(this, messagesContainer, "Hola desde ejercicio_52", "Ejercicio_52");
+        Intent intent = new Intent(this, Ejercicio_51.class);
+        startActivity(intent);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        MessageSender.deleteAllMessages(this);
+    }
+
 }
