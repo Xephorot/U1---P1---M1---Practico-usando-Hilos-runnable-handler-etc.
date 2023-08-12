@@ -4,35 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Ejercicio_7">
 
     <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="198dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
         <Button
-            android:id="@+id/btn_ejercicio3"
+            android:id="@+id/boton_forzar_notificacion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Ejercicio 3" />
+            android:text="Forzar notificación"
+            android:layout_gravity="center"/>
         <Button
-            android:id="@+id/btn_ejercicio5"
+            android:id="@+id/boton_dentener_notificaciones"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Ejercicio 5" />
-        <Button
-            android:id="@+id/btn_ejercicio7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Ejercicio 7" />
+            android:text="Detener Notificaciones"
+            android:layout_gravity="center"/>
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
