@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EjerciciosRecursividad">
+    tools:context=".MainRecursividadActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,35 +15,33 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-        <TextView
-            android:id="@+id/textViewTitulo23"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ejercicio 23"
-            android:textSize="20dp"
-            android:layout_gravity="center"/>
 
-        <EditText
-            android:id="@+id/editTextCadena"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Introduce una cadena" />
 
         <Button
-            android:id="@+id/botonInvertirCadena"
+            android:id="@+id/btn_ejercicio17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Invertir cadena" />
-
-        <TextView
-            android:id="@+id/textViewResultado"
+            android:text="Ejercicio 17" />
+        <Button
+            android:id="@+id/btn_ejercicio19"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Resultado" />
+            android:text="Ejercicio 19" />
+        <Button
+            android:id="@+id/btn_ejercicio21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ejercicio 21" />
+        <Button
+            android:id="@+id/btn_ejercicio23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ejercicio 23" />
+        <Button
+            android:id="@+id/btn_ejercicio25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ejercicio 25" />
 
     </LinearLayout>
-
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

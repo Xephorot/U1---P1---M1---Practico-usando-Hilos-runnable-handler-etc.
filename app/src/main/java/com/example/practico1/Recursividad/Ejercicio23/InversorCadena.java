@@ -1,4 +1,4 @@
-package com.example.practico1.Recursividad;
+package com.example.practico1.Recursividad.Ejercicio23;
 
 public class InversorCadena {
     public static String invertirCadena(String cadena) {
