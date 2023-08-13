@@ -13,11 +13,13 @@ public class MainActivity extends AppCompatActivity {
     private Button Ejercicio_11;
     private Button Ejercicio_13;
     private Button Ejercicio_15;
+    private Button EjerciciosRecursividad;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        EjerciciosRecursividad = findViewById(R.id.btn_ejercicioRecursividad);
         Ejercicio_3 = findViewById(R.id.btn_ejercicio3);
         Ejercicio_5 = findViewById(R.id.btn_ejercicio5);
         Ejercicio_7 = findViewById(R.id.btn_ejercicio7);
@@ -48,6 +50,10 @@ public class MainActivity extends AppCompatActivity {
         });
         Ejercicio_15.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, Ejercicio_15.class);
+            startActivity(intent);
+        });
+        EjerciciosRecursividad.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, EjerciciosRecursividad.class);
             startActivity(intent);
         });
     }

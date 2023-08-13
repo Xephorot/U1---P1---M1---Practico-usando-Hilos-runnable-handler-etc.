@@ -16,6 +16,12 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
+            android:id="@+id/btn_ejercicioRecursividad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Ejercicios Recursividad" />
+        <Button
             android:id="@+id/btn_ejercicio3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
