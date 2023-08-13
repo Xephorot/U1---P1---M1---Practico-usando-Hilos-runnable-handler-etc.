@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     private Button Ejercicio_7;
     private Button Ejercicio_11;
     private Button Ejercicio_13;
+    private Button Ejercicio_15;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         Ejercicio_7 = findViewById(R.id.btn_ejercicio7);
         Ejercicio_11 = findViewById(R.id.btn_ejercicio11);
         Ejercicio_13 = findViewById(R.id.btn_ejercicio13);
+        Ejercicio_15 = findViewById(R.id.btn_ejercicio15);
 
         Ejercicio_3.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, Ejercicio_3.class);
@@ -42,6 +44,10 @@ public class MainActivity extends AppCompatActivity {
         });
         Ejercicio_13.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, Ejercicio_13.class);
+            startActivity(intent);
+        });
+        Ejercicio_15.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, Ejercicio_15.class);
             startActivity(intent);
         });
     }
