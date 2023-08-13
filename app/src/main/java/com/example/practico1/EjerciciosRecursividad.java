@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.practico1.Recursividad.InversorCadena;
+import com.example.practico1.Recursividad.Ejercicio23.InversorCadena;
 
 public class EjerciciosRecursividad extends AppCompatActivity {
     private EditText editTextCadena;
