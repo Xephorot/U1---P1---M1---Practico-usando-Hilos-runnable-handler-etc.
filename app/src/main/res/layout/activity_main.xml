@@ -7,8 +7,8 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="198dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,6 +39,12 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Ejercicio 11" />
+        <Button
+            android:id="@+id/btn_ejercicio13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Ejercicio 13" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
