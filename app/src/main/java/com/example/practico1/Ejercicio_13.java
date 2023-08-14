@@ -35,9 +35,14 @@ public class Ejercicio_13 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String tarea = editTextTarea.getText().toString();
-                administradorTareas.agregarTarea(tarea);
-                adapter.notifyDataSetChanged();
-                editTextTarea.setText("");
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        administradorTareas.agregarTarea(tarea);
+                        adapter.notifyDataSetChanged();
+                        editTextTarea.setText("");
+                    }
+                }, 1000); // Retraso de 1000 milisegundos (1 segundo)
             }
         });
 
