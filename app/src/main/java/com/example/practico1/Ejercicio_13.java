@@ -2,6 +2,7 @@ package com.example.practico1;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -10,25 +11,10 @@ import android.widget.ListView;
 
 import com.example.practico1.Ejercicio13.AdministradorTareas;
 
-import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ListView;
-
-import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ListView;
-
 public class Ejercicio_13 extends AppCompatActivity {
     private AdministradorTareas administradorTareas;
     private ArrayAdapter<String> adapter;
+    private Handler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +28,8 @@ public class Ejercicio_13 extends AppCompatActivity {
 
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, administradorTareas.obtenerTareas());
         listViewTareas.setAdapter(adapter);
+
+        handler = new Handler();
 
         botonAgregar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,5 +47,3 @@ public class Ejercicio_13 extends AppCompatActivity {
         });
     }
 }
-
-

@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -14,6 +16,7 @@ import com.example.practico1.Ejercicio15.ProcesadorImagenes;
 public class Ejercicio_15 extends AppCompatActivity {
     private ProcesadorImagenes procesadorImagenes;
     LinearLayout linearLayoutImagenes;
+    private Handler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +26,16 @@ public class Ejercicio_15 extends AppCompatActivity {
         procesadorImagenes = new ProcesadorImagenes();
         Button botonCargarImagenes = findViewById(R.id.boton_cargar_imagenes);
         linearLayoutImagenes = findViewById(R.id.linearLayout_imagenes); // Inicializa linearLayoutImagenes
+
+        handler = new Handler(new Handler.Callback() {
+            @Override
+            public boolean handleMessage(Message msg) {
+                ImageView imageView = new ImageView(Ejercicio_15.this);
+                imageView.setImageBitmap((Bitmap) msg.obj);
+                linearLayoutImagenes.addView(imageView);
+                return true;
+            }
+        });
 
         botonCargarImagenes.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,17 +49,14 @@ public class Ejercicio_15 extends AppCompatActivity {
                 for (Bitmap imagen : imagenes) {
                     procesadorImagenes.cargarImagen(imagen);
                     Bitmap imagenProcesada = procesadorImagenes.procesarImagen(imagen);
-                    ImageView imageView = new ImageView(Ejercicio_15.this);
-                    imageView.setImageBitmap(imagenProcesada);
-                    linearLayoutImagenes.addView(imageView);
+                    Message message = handler.obtainMessage();
+                    message.obj = imagenProcesada;
+                    handler.sendMessage(message);
                 }
             }
         });
-
     }
 }
-
-
 
 
 
